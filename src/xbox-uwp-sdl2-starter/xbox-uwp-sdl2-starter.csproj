@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="Font\Font.cs" />
     <Compile Include="Font\FontRenderer.cs" />
+    <Compile Include="Font\AsciiArt.cs" />
     <Compile Include="HelloWorldScene.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

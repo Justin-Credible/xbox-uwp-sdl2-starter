@@ -75,7 +75,7 @@ namespace xbox_uwp_sdl2_starter
          * Color can be specified inline with the magic string in the format: {R,G,B}
          * Example: "{255,255,255}This is the color {255,0,0}Red{255,255,255}!"
          */
-        public static void RenderString(IntPtr sdlRenderer, string str, int x, int y)
+        public static void RenderString(IntPtr sdlRenderer, string str, int x, int y, Color? foreground = null, Color? background = null)
         {
             // Will contain the indexs in the string at which colors should be applied.
             var colors = new Dictionary<int, Color>();
@@ -101,8 +101,8 @@ namespace xbox_uwp_sdl2_starter
                 match = COLOR_CONTROL.Match(str);
             }
 
-            // Start off assuming the color is white.
-            Color currentColor = Color.White;
+            // Start off assuming the color is white, unless one is provided.
+            Color currentColor = foreground == null ? Color.White : foreground.Value;
 
             for (var i = 0; i < str.Length; i++)
             {
@@ -112,7 +112,7 @@ namespace xbox_uwp_sdl2_starter
                 if (colors.ContainsKey(i))
                     currentColor = colors[i];
 
-                RenderCharacter(sdlRenderer, character, x + (i * 8), y, currentColor);
+                RenderCharacter(sdlRenderer, character, x + (i * 8), y, currentColor, background);
             }
         }
     }

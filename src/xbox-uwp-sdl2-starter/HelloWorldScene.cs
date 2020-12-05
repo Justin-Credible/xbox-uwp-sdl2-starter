@@ -13,6 +13,7 @@ namespace xbox_uwp_sdl2_starter
         {
             SDL.SDL_SetRenderDrawColor(sdlRenderer, 255, 0, 0, 255);
             SDL.SDL_RenderClear(sdlRenderer);
+            SDL.SDL_RenderPresent(sdlRenderer);
         }
     }
 }

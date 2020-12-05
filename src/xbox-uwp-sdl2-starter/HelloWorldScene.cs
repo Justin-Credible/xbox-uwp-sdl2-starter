@@ -9,11 +9,22 @@ namespace xbox_uwp_sdl2_starter
 {
     class HelloWorldScene
     {
+        private bool _needsRender = true;
+
         public void Render(IntPtr sdlRenderer)
         {
-            SDL.SDL_SetRenderDrawColor(sdlRenderer, 255, 0, 0, 255);
+            if (!_needsRender)
+                return;
+
+            SDL.SDL_SetRenderDrawColor(sdlRenderer, 11, 145, 4, 255); // #0b9104 - Xbox Green
             SDL.SDL_RenderClear(sdlRenderer);
+
+            FontRenderer.RenderString(sdlRenderer, "XBOX ONE", 0, 2);
+            FontRenderer.RenderString(sdlRenderer, "Hello World!", 0, 3);
+
             SDL.SDL_RenderPresent(sdlRenderer);
+
+            _needsRender = false;
         }
     }
 }

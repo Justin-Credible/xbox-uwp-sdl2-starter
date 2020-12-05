@@ -21,7 +21,7 @@ You'll need Visual Studio 2019 and an Xbox setup in dev mode. See below for more
 
 1. [Download Release](https://github.com/Justin-Credible/xbox-uwp-sdl2-starter/releases)
 2. Unzip file
-3. Open `src/xbox-uwp-sdl2-starter.sln`
+3. Open `xbox-uwp-sdl2-starter.sln`
 4. Right click the project file `xbox-uwp-sdl2-starter (Universal Windows)` in the Solution Explorer and select Properties
 5. Navigate to Application > Package Manifest > Packaging
 6. Click Choose Certificate

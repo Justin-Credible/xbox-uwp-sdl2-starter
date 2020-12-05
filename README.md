@@ -62,6 +62,8 @@ If you are using the repository directly or you want to build `SDL2.dll` it for 
 
 The DLL is included in the starter project with a `Build Action` of `Content` and `Copy to output directory` of `Always`. This ensures the DLL is bundled into the UWP app package and deployed to the Xbox.
 
+**NOTE: You CAN NOT use the pre-built Windows binaries on the SDL2 download page** as these are built for the `Win32` _desktop_ platform; an Xbox UWP app must target the `WinRT` platform.
+
 ### Removing XAML components
 
 As mentioned earlier, the default UWP project that Visual Studio creates assumes you want to use WPF/XAML to build your app. We don't want these when using SDL2 however. I was able to stumble across a flag named `DISABLE_XAML_GENERATED_MAIN`. This can be set in Project properties > Build > General > Conditional compilation symbols for each configuration/platform combination.

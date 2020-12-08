@@ -72,6 +72,12 @@ This ensures the compiler targets will not attempt to auto-create the main metho
 
 I've already done this in the starter project of course, but I think it's worth noting here since this took a while to figure out.
 
+### SDL Main
+
+I had seen several examples and SDL documentation on using the `SDL_WinRTRunApp` method, which is required so that the UWP app can activate successfully (if your app stops immediately with an "unable to active" error or similar, then this is probably your issue).
+
+I also had to remove the `[STAThread]` attribute from the `Main` entrypoint for this to work.
+
 ### Headless Xbox
 
 I found it useful to use the local streaming functionality to stream the Xbox screen to my development machine. This eliminated the need for me to have yet another screen on my desk.
